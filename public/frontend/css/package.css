@@ -1,0 +1,115 @@
+
+/* Global Variables */
+:root {
+    --color1: #eee;
+    --color2: #fff;
+    --color3: #00cc0e;
+    --color3Hover: #008e09;
+    --color4: #00dbff;
+    --color4Hover: #0099b2;
+    --color5: #b12bff;
+    --color5Hover: #8300d0;
+    --color6: #2c3233;
+    --color7: #a2b1ba;
+}
+
+
+
+
+
+.container__card {
+    background-color: var(--color2);
+    width: 320px;
+    height: 520px;
+    text-align: center;
+    transition: transform 0.3s;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+
+    /* Flex */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container__card:not(.container__card:last-of-type) {
+    margin-right: 35px;
+}
+
+.container__card:hover {
+    transform: translateY(-15px);
+}
+
+.container__cardSvgs {
+    width: 100%;
+    height: 240px;
+    position: relative;
+
+    /* Flex */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container__cardSvg1 {
+    /* Position */
+    position: absolute;
+    left: 41px;
+    bottom: 38px;
+}
+
+.container__cardSvg2 {
+    /* Position */
+    position: absolute;
+    right: 36px;
+    top: 40px;
+}
+
+.container__cardSvg3 {
+    position: absolute;
+}
+
+.container__cardContent {
+    padding: 20px;
+}
+
+.container__cardName {
+    color: var(--color6);
+    font-size: 17px;
+    letter-spacing: 1px;
+}
+
+.container__cardPrice {
+    color: var(--color4);
+    margin: 20px 0;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.container__cardDesc {
+    color: var(--color7);
+    padding: 0 30px;
+    margin-bottom: 40px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    line-height: 1.6;
+}
+
+.container__cardLink {
+    color: var(--color2);
+    padding: 10px 20px;
+    font-size: 12px;
+    font-weight: 700;
+
+    /* Text */
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+
+.container__card .container__cardLink:hover {
+    color: white;
+    background-color: #FBA504;
+}

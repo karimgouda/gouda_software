@@ -1,0 +1,128 @@
+.company-brief {
+    background-color: var(--bg-color);
+    padding-bottom: 80px !important;
+}
+
+.company-brief__content__logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.company-brief__content__logo__img {
+    height: 200px;
+}
+
+.company-brief__content__text__description {
+    text-align: justify;
+    color: var(--bg-black-color);
+    font-family: "Cairo", Sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 auto;
+    width: 80%;
+}
+
+@media (max-width: 768px) {
+    .company-brief__content__text__description {
+        width: 100%;
+    }
+}
+
+/* start features-cards */
+.features-cards {
+    padding: 50px 0;
+    position: relative;
+    background-color: var(--blue-color);
+    background-position: center;
+    background-size: 100%;
+}
+
+.features-cards .features-cards__img_top {
+    position: absolute;
+    top: -55px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.features-cards .features-cards__img_bottom {
+    position: absolute;
+    bottom: -55px;
+    left: 50%;
+    transform: translateX(-50%) scaleY(-1);
+}
+
+.features-cards__parent {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.features-cards__parent__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.features-cards__parent__row:nth-child(odd) {
+    flex-wrap: wrap-reverse;
+}
+.features-cards__parent__row__card {
+    width: calc((100% - 20px) / 2);
+    min-height: 100%;
+    max-height: 100%;
+}
+
+@media (max-width: 768px) {
+    .features-cards__parent__row__card {
+        width: 100%;
+    }
+}
+
+.features-cards__parent__row__card_img {
+    padding: 20px;
+    background-color: #fff;
+    max-height: 350px;
+}
+
+@media (max-width: 768px) {
+    .features-cards__parent__row__card_img {
+        padding: 10px;
+    }
+}
+
+.features-cards__parent__row__card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.features-cards__parent__row__card__title {
+    color: var(--new-color);
+    font-size: 22px;
+    font-weight: 700;
+    position: relative;
+    margin-bottom: 40px;
+    width: fit-content;
+}
+
+.features-cards__parent__row__card__title::before {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    background-color: var(--new-color);
+    height: 2px;
+    left: 0;
+    width: 130px;
+}
+
+.features-cards__parent__row__card__text {
+    text-align: start;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 0;
+}
+
+/* end features-cards */
