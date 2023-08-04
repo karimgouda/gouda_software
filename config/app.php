@@ -185,7 +185,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+        \Chatify\ChatifyServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -220,6 +220,7 @@ return [
         'JsonLdMulti'   => Artesaos\SEOTools\Facades\JsonLdMulti::class,
         // or
         'SEO' => Artesaos\SEOTools\Facades\SEOTools::class,
+        'Chatify' => Chatify\Facades\ChatifyMessenger::class,
     ])->toArray(),
 
 ];

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Frontend\AuthController;
+use App\Http\Controllers\Frontend\ChatController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Frontend\HomeController;
@@ -39,7 +41,17 @@ Route::group(
         //check out service request
         Route::get('checkout/{id}','checkout')->name('checkout');
         Route::post('store/{id}','store')->name('store');
-
+    });
+    Route::post('logout',[AuthController::class,'logout'])->name('front.logout');
+    Route::controller(AuthController::class)->middleware('guest')->group(function (){
+        Route::get('login','login')->name('front.login');
+        Route::post('signIn','signIn')->name('signIn');
+        Route::get('register','register')->name('register');
+        Route::post('signup','signup')->name('signup');
+    });
+    Route::controller(ChatController::class)->middleware('auth')->group(function (){
+        Route::get('chat','chat')->name('chat');
+        Route::post('create','create')->name('create');
     });
 });
 

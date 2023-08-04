@@ -23,14 +23,25 @@
                         </div>
                     </div>
                     <a href="{{route('contact_us')}}" class="nav-item nav-link">{{translate('Contact')}}</a>
-                    @if(app()->getLocale() == 'ar')
-                    <a href="{{LaravelLocalization::getLocalizedURL('en')}}" class="nav-item nav-link">English</a>
-                    @else
-                    <a href="{{LaravelLocalization::getLocalizedURL('ar')}}" class="nav-item nav-link">العربيه</a>
-
-                    @endif
+                    <a href="{{route('chat')}}" class="nav-item nav-link">{{translate('technical support')}}</a>
 
                 </div>
+                @if(app()->getLocale() == 'ar')
+                    <a href="{{LaravelLocalization::getLocalizedURL('en')}}" class="nav-item nav-link text-white">English</a>
+                @else
+                    <a href="{{LaravelLocalization::getLocalizedURL('ar')}}" class="nav-item nav-link text-white">العربيه</a>
+
+                @endif
+                @guest
+                <a href="{{route('front.login')}}" class="nav-item nav-link text-white">{{translate('login')}}</a>
+                <a href="{{route('register')}}" class="nav-item nav-link text-white">{{translate('register')}}</a>
+                @endguest
+                @auth
+                    <form action="{{route('front.logout')}}" method="post">
+                        @csrf
+                        <button class="nav-item nav-link text-white bg-transparent border-0">{{translate('logout')}}</button>
+                    </form>
+                @endauth
                 <a href="{{route('services')}}" class="btn rounded-pill py-2 px-4 ms-3 d-none d-lg-block">{{translate('Get Started')}}</a>
             </div>
         </nav>
